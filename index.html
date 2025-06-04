@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Verify Your Code</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2em;
+      max-width: 400px;
+      margin: auto;
+    }
+    input {
+      padding: 0.5em;
+      margin: 0.5em 0;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    button {
+      padding: 0.75em;
+      background-color: #0070f3;
+      color: white;
+      border: none;
+      width: 100%;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0057c2;
+    }
+  </style>
+</head>
+<body>
+  <h2>Verify Your Code</h2>
+  <form action="http://localhost:5678/webhook-test/freecoffee" method="POST">
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone" required pattern="[0-9+]{8,15}" placeholder="+447481347722"/>
+
+    <label for="code">6-Digit Verification Code:</label>
+    <input type="text" id="code" name="code" required pattern="\d{6}" maxlength="6" placeholder="123456"/>
+
+    <button type="submit">Verify</button>
+  </form>
+</body>
+</html>
